@@ -515,6 +515,9 @@ class WooThemes_Sensei_Certificates {
 		// Get student name
 		$student_name = $this->get_user_full_name($student);
 
+		// Capitalize student name
+        $student_name = trim(implode('-', array_map('ucfirst', explode('-', ucwords(strtolower(str_replace('_',' ', $student_name)))))));
+
 		// Get end date
 		setlocale(LC_TIME, get_locale() );
 
